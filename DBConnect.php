@@ -60,7 +60,7 @@ function Insert($sql)
     return false;
 }
 
-class DataProvider 
+class DataProvider
 {
 	public static function ExecuteQuery($sql)
 	{
