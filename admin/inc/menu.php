@@ -204,20 +204,26 @@
 
                             <!-- Quản lý đơn hàng -->
                             <li>
-                                <?php
+                                <a href="javascript: void(0);">
+                                    <i class="la la-book"></i>
+                                    <span> Purchase </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <?php
                                     {
                                         ?>
                                             <li>
-                                                <a href="index.php?act=5">
-                                                    <i class=" la la-money"></i>
-                                                    <span> Purchase </span> 
-                                                    <span class="menu-arrow"></span>
-                                                </a>
+                                                <a href="index.php?act=5">All Purchase</a>
                                             </li>
                                         <?php
                                     }
-                                ?>
-                                
+                                    ?>
+                                    <li>
+                                        <a href="index.php?act=5&sub=4">Add Purchase</a>
+                                    </li>
+
+                                </ul>
                             </li>
 
 
