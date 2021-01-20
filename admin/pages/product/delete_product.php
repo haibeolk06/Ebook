@@ -6,5 +6,5 @@
 		$sql = "DELETE FROM `ebook`.`product` WHERE `Product_Id` = '$id'";
 		DataProvider::ExecuteQuery($sql);
     }
-    DataProvider::ChangeURL('../../ebook/admin/index.php?act=1');
+    DataProvider::ChangeURL('../../ebook/admin/index.php?act=4');
 ?>

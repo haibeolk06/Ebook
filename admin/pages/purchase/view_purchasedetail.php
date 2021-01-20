@@ -16,18 +16,44 @@
             </div>
         </div>
     </div>    
-<?php
-    if(isset($_GET['id']) == false)
-        DataProvider::ChangeURL('index.php?act=5');
 
-    $id = $_GET['id'];
+                        <table>
+                            <tr style="text-align: center; font-size: 14px; ">
+                                <th width="300">Purchase Id</th>
+                                <th width="300">Product Id</th>
+                                <th width="300">Quantity</th>
+                                <th width="300">Total Amount</th>
+                                
+                                
+                            </tr>
+                            <?php
+                                if(isset($_GET['id']) == false)
+                                    DataProvider::ChangeURL('index.php?act=5');
 
-    $sql = "SELECT * FROM purchasedetail WHERE Purchase_Id = $id";
-    $bang = DataProvider::ExecuteQuery($sql);
-    $dong = mysqli_fetch_array($bang);
-?> 
+                                $id = $_GET['id'];
+
+                                $sql = "SELECT * FROM purchasedetail WHERE Purchase_Id = $id";
+                                $bang = DataProvider::ExecuteQuery($sql);
+                                $dong = mysqli_fetch_array($bang);
+                            
+                            while($row = mysqli_fetch_array($bang))
+                                {
+                                    ?>
+                                        <tr style="text-align: center;"> 
+                                            <td><?php echo $row["Purchase_Id"]; ?></td>
+                                            <td><?php echo $row["Product_Id"]; ?></td>
+                                            <td><?php echo $row["Quantity"]; ?></td>
+                                            <td><?php echo $row["TotalAmount"]; ?></td>
+                                            
+                                        </tr>
+                                    <?php
+                                }
+                                ?>	
+                        </table>
+                    <input class="btn btn-danger" style="width: 60px; height: 35px; text-align: center; margin-top: 20px; float: right" type="button" value="Back" onClick="location = 'index.php?act=5';" />
+
 <!-- end page title --> 
-    <form style="margin: 0 auto; width:300px; font-size: 14px " action="pages/purchase/viewHandle.php" method="get">
+    <!-- <form style="margin: 0 auto; width:300px; font-size: 14px " action="pages/purchase/viewHandle.php" method="get">
     <fieldset>
         <legend>Purchase Detail</legend>
         Product ID
@@ -43,9 +69,8 @@
         <input style="margin-bottom:7px;" class="form-control" type="text" name="txttotalamount" value="<?php echo $dong["TotalAmount"]; ?>"readonly="false" />
     </fieldset>
     <fieldset style="padding-top: 15px; text-align: center ">
-        <input class="btn btn-danger" style="width: 70px; height: 35px" type="button" value="Back" onClick="location = 'index.php?act=5';" />
     </fieldset>
 
-    </form>
+    </form> -->
 
 </div>

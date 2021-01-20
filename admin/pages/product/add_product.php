@@ -17,7 +17,7 @@
         </div>
     </div>     
 <!-- end page title --> 
-    <form style="margin: 0 auto; width:500px; font-size: 14px " action="pages/product/addHandle.php" method="get">
+    <form style="margin: 0 auto; width:500px; font-size: 14px " enctype="multipart/form-data" action="pages/product/addHandle.php" method="get">
     
         <fieldset>
             <legend>Product info</legend>

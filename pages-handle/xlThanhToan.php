@@ -37,6 +37,11 @@
             $sql = "INSERT INTO purchasedetail 
                         VALUES ($purchase_id, $key, $quantity, $total_amount)";
             $result = Insert($sql);
+
+            $updateQuantitySql = "UPDATE product 
+                    SET Quantity = Quantity - $quantity
+                    WHERE Product_Id = $key";
+            $run = Insert($updateQuantitySql);
         }
         
         unset($_SESSION['cart']);
