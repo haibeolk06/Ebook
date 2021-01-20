@@ -1,9 +1,17 @@
 <html>
     <head>
         <style>
-            a{
+
+            .paging{
+                font-size: 14px;
+                text-align: right; 
+                margin-top: 30px;
+            }
+
+            .paging a{
                 color: #FFF;    
             }
+
             .page-item{
                 /* border: 1px solid #ccc;
                 padding: 5px 9px; */
@@ -18,12 +26,12 @@
                 border-radius: 2px;
             }
 
-            a:hover{
+            .paging a:hover{
                 background-color: #3B434E;
                 color: #D10024;
             }
 
-            a:active{
+            .paging a:active{
                 background-color: #D10024;
                 border-color: #D10024;
                 color: #FFF;
@@ -108,7 +116,7 @@
                             ?>	
                         </table>
                         
-                        <div style="font-size: 14px; text-align: right; margin-top: 30px">
+                        <div class="paging" >
                             <?php 
                             if($current_page > 3){
                                 $first_page = 1;?>
