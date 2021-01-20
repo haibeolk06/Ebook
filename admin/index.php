@@ -1,9 +1,8 @@
-﻿<!-- <?php
+﻿<?php
 	session_start();
 	include("../DBConnect.php");
 	
 	//Kiểm tra có đăng nhập với quyền Admin chưa?
-<<<<<<< HEAD
     if(isset($_SESSION['display_name']) && isset($_SESSION['email']) && isset($_SESSION["role"])){
         if($_SESSION["role"] != 1){
             header('Location: /EBook');
@@ -15,16 +14,7 @@
     
 ?>
 
-=======
-	if(isset($_SESSION["User_Id"]) != true)
-		DataProvider::ChangeURL('login.php');
-	if($_SESSION["MaLoaiTaiKhoan"] != 0)
-		DataProvider::ChangeURL('login.php?error=3');
-		
-	//Đã đăng nhập thành công với quyền Admin rồi
-?>  -->
->>>>>>> ec29592d8a4a7fcfbb5076d264bd0d5b0df1e0b6
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -33,7 +23,7 @@
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
         <meta content="Coderthemes" name="author">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <!-- App favicon -->
+        <!-- App favicon  -->
         <link rel="shortcut icon" href="assets\images\ebook-logo.ico">
 
         <!-- plugin css -->
