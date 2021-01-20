@@ -22,6 +22,8 @@
 								echo '<p class="errorMessage"> Tài khoản không tồn tại </p>';
 							elseif($_GET["error"] == "txbRong")
 								echo '<p class="errorMessage"> Vui lòng nhập đầy đủ thông tin </p>';
+							elseif($_GET["error"] == "SaiMatKhau")
+								echo '<p class="errorMessage"> Mật khẩu chưa chính xác </p>';
 						}						
 					?>
 					

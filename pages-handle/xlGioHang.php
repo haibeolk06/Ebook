@@ -74,9 +74,9 @@ if(isset($_SESSION['cart']))
 
 
         $dsSanPham .= '
-        <tr>
+        <tr class="chiTietSP">
 	        <td>
-                <a href="#">
+                <a href="index.php?page=ChiTiet&id=' . $key . '">
                     <img src="' . $value['avatar'] . '" class="img-thumbnail">
                 </a>
 	        </td>
@@ -86,7 +86,8 @@ if(isset($_SESSION['cart']))
                 <p style="color: #999;">'
                     . $value['category_name'] .
                 '</p>
-                <a class="tenSanPham-GioHang" href="index.php?page=ChiTiet&id=' . $key . '"
+                <p style="display: none" class="product_id" >' . $key . '</p>
+                <a href="index.php?page=ChiTiet&id=' . $key . '"
                     style="font-size: large;">'
                     . $value['name'] .
                 '</a>
@@ -106,19 +107,19 @@ if(isset($_SESSION['cart']))
             <td class="text-center">
                 <div class="price-wrap">
                     <var class="price">'
-                        . number_format($value['price'], 0, '.', '.') . ' ₫' .
+                        . number_format($value['price'], 0, '.', '.') . '₫' .
                     '</var>
                 </div>
             </td>
 
             <td class="text-center">
-                <strong class="tongTien1SP-GioHang">'
-                    . number_format($value['price'] * $value['quantity'], 0, '.', '.') . ' ₫' . 
+                <strong class="tongTien1SP">'
+                    . number_format($value['price'] * $value['quantity'], 0, '.', '.') . '₫' . 
                 '</strong>
             </td>
 
             <td class="text-right">
-                <a href="#" id="removeProduct-Cart" onclick="cartAction(\'remove\', \'' . $key .  '\')">
+                <a href="#" onclick="cartAction(\'remove\', \'' . $key .  '\')">
                     <span>
                         <svg fill="red" ; width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path fill="none" stroke="red" stroke-width="1.06" d="M16,16 L4,4"></path>

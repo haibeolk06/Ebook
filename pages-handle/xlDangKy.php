@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include '..\DBConnect.php';
+    include '../DBConnect.php';
 
     include '../Exception.php';
     include '../PHPMailer.php';
@@ -63,7 +63,7 @@
                 $address = $_POST['address'];
                 $phone = $_POST['phone'];
                 $verificationCode = md5(uniqid($email, true));
-                $verificationLink = "http://localhost/ebook/index.php?page=XacMinh&code=$verificationCode";
+                $verificationLink = "http://localhost/ebook/index.php?page=XacMinh&email=$email&code=$verificationCode";
                 
                 $body = "";
                 $body .= "Chào mừng " . $last_name . " " . $first_name . " đã đến với EBook! <br><br>";

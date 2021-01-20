@@ -31,7 +31,7 @@
 	<fieldset>
         <legend>Account info</legend>
         Publishing Company Name
-        <input style="margin-bottom:7px;" class="form-control" type="text" name="txtCompany_Name" value="<?php echo $dong["Publishing_Company_Name"]; ?>" />
+        <input style="margin-bottom:7px;" class="form-control" type="text" required="" name="txtCompany_Name" value="<?php echo $dong["Publishing_Company_Name"]; ?>" />
         <input type="hidden" name="id" value="<?php echo $id;?>" />
     </fieldset>
    

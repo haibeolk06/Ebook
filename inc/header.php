@@ -13,15 +13,15 @@
                 <li>
                
                 <div class="dropdown">
-                    <?php 
-                        if(isset($_SESSION['display_name']) && isset($_SESSION['email'])){
-                            if($_SESSION['email'] == "admin@ebook.com"){
+                    <?php
+                        if(isset($_SESSION['display_name']) && isset($_SESSION['email']) && isset($_SESSION["role"])){
+                            if($_SESSION["role"] == 1){
                                 echo '<a href="/ebook/admin">
                                 <i class="fa fa-user-o"></i>'
                                 . $_SESSION["display_name"] .
                                 '</a>
                                 <div class="dropdown-content">
-                                    <a href="href="/ebook/admin">Trang quản lý Administrator</a>
+                                    <a href="/ebook/admin">Trang quản lý Administrator</a>
                                     <a href="./pages-handle/xlDangXuat.php">Đăng xuất</a>
                                 </div>';
                             }
@@ -114,27 +114,14 @@
 
                             <div class="cart-dropdown">
                                 <div id="dsSanPham-DropDown" class="cart-list">
+
                                 <?php							
 									if(isset($_SESSION['cart'])){
-											foreach ($_SESSION['cart'] as $key => $value) {
-																														
-								?>
-
-                                    <div class="product-widget">
-                                        <div class="product-img">
-                                            <img src="<?php echo $value['avatar'] ?>" alt="">
-                                        </div>
-                                        <div class="product-body">
-                                            <h3 class="product-name"><a href="<?php echo 'index.php?page=ChiTiet&id=' . $key ?>"> <?php echo $value['name'] ?> </a></h3>
-                                            <h4 class="product-price"><span class="qty">
-                                                    <?php echo $value['quantity'] ?>
-                                                     x</span><?php echo number_format($value['price'], 0, '.', '.') ?>
-                                            </h4>
-                                        </div>
-                                        <button class="delete" onclick="cartAction('remove', <?php echo "'" . $key . "'" ?> )" ><i class="fa fa-close"></i></button>
-                                    </div>
-
-                                <?php }} ?>
+										foreach ($_SESSION['cart'] as $key => $value) {
+											include './templates/mauSanPham-Dropdown.php';																
+                                        }
+                                    } 
+                                 ?>
 
                                 </div>
                                 <div class="cart-summary">

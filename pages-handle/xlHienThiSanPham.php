@@ -54,7 +54,7 @@
                         WHERE P.Category_Id = C.Category_Id AND P.Publishing_Company_Id = PC.Publishing_Company_Id
                         AND P.Publishing_Company_Id IN (";
             else{
-                $sql .= " AND Publishing_Company_Id IN (";
+                $sql .= " AND P.Publishing_Company_Id IN (";
             }
             
             #Lấy danh sách nhà xuất bản mà người dùng đã chọn

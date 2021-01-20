@@ -27,7 +27,7 @@
 	$dong = mysqli_fetch_array($bang);
 ?>
 
-<form style="margin: 0 auto; width:300px; font-size: 14px " action="pages/account/editHandle.php" method="get">
+<form style="margin: 0 auto; width:300px; font-size: 14px " action="pages/account/editHandle.php" method="POST">
 	<fieldset>
         <legend>Account info</legend>
         First Name
@@ -40,18 +40,43 @@
     </fieldset>
     <fieldset>
         Email
-        <input style="margin-bottom:7px;" class="form-control" type="text" name="txtEmail" value="<?php echo $dong["Email"]; ?>" />
+        <input style="margin-bottom:7px;" class="form-control" type="text" name="txtEmail" value="<?php echo $dong["Email"]; ?>" readonly/>
     </fieldset>
     <fieldset>
         Password
-        <input style="margin-bottom:7px;" class="form-control" type="text" name="txtPassword" value="<?php echo $dong["Password"]; ?>" />
+        <input style="margin-bottom:7px;" class="form-control" type="text" name="txtPassword" value="" />
     </fieldset>
     <fieldset>
         Phone Number
         <input style="margin-bottom:7px;" class="form-control" type="text" name="txtPhonenumber" value="<?php echo $dong["Phonenumber"]; ?>" />
     </fieldset>
+    <fieldset>
+        Address
+        <input style="margin-bottom:7px;" class="form-control" type="text" name="txtAddress" value="<?php echo $dong["Address"]; ?>" />
+    </fieldset>
+    <fieldset>
+        Verified
+        <input style="margin-bottom:7px;" class="form-control" type="text" name="txtVerified" value="<?php echo $dong["Verified"]; ?>" />
+    </fieldset>
+    <fieldset>
+            Role
+            </br>
+            <select style="margin-bottom: 7px; width: 300px; height: 36px;  border-radius: 4px; background: #58616e; color: white" id="RoleSelect" name="RoleSelect"   >
+                <?php
+                    if($dong["User_Role"] == 1){
+                        echo '<option value="0">User</option>
+                            <option value="1" selected>Admin</option>';
+                    }
+                    else{
+                        echo '<option value="0" selected>User</option>
+                            <option value="1">Admin</option>';
+                    }
+                ?>
+                
+            </select>
+        </fieldset>
     <fieldset style="padding-top: 15px; text-align: center ">
-        <input class="btn btn-danger" style="margin-right: 10px; width: 70px; height: 35px" type="submit" value="Edit"/>
+        <input class="btn btn-danger" style="margin-right: 10px; width: 70px; height: 35px" type="submit" name="submit" value="Edit"/>
         <input class="btn btn-danger" style="width: 70px; height: 35px" type="button" value="Cancel" onClick="location = 'index.php?act=1';" />
     </fieldset>
 </form>

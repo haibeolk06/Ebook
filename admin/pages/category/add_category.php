@@ -21,12 +21,12 @@
     
         <fieldset>
             Category Id
-            <input style="margin-bottom: 7px" class="form-control" type="text" name="txtCategory_Id"  />
+            <input style="margin-bottom: 7px" class="form-control" type="text" required="" name="txtCategory_Id"  />
             
         </fieldset>
         <fieldset>
             Category Name
-            <input style="margin-bottom: 7px" class="form-control" type="text" name="txtCategory_Name"  />
+            <input style="margin-bottom: 7px" class="form-control" type="text" required="" name="txtCategory_Name"  />
             
         </fieldset>
 

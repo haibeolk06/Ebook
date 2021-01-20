@@ -9,12 +9,12 @@
 		$ktsql = "SELECT Publishing_Company_Name FROM publishing_company WHERE Publishing_Company_Name='$companyname'";
 		// $bang=DataProvider::ExecuteQuery($ktsql);
 		$bang=LoadData($ktsql);
-
+		$url="../../index.php?act=2&sub=3&id=".$id;
 		// $dong=mysqli_num_rows($bang);
 		if(count($bang) != 0)
 		{
 			echo "<script type='text/javascript'>alert('Trùng dữ liệu');</script>";
-			DataProvider::ChangeURL('../../index.php?act=2&sub=3');
+			DataProvider::ChangeURL($url);
 		}
 		else
 		{

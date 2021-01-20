@@ -17,35 +17,31 @@
         </div>
     </div>     
 <!-- end page title --> 
-    <form style="margin: 0 auto; width:300px; font-size: 14px " action="pages/account/addHandle.php" method="get">
+    <form style="margin: 0 auto; width:300px; font-size: 14px " action="pages/account/addHandle.php" method="POST">
     
         <fieldset>
             First Name
-            <input style="margin-bottom: 7px" class="form-control" type="text" name="txtFirst_name" required="" placeholder="Enter your first name"  />
-            <input type="hidden" name="id"  />
-            
+            <input style="margin-bottom: 7px" class="form-control" type="text" name="txtFirstName"  />        
         </fieldset>
         <fieldset>
             Last Name
-            <input style="margin-bottom: 7px" class="form-control" type="text" name="txtLast_name" required="" placeholder="Enter your last name"  />
-            
+            <input style="margin-bottom: 7px" class="form-control" type="text" name="txtLastName"  />        
         </fieldset>
         <fieldset>
             Email
-            <input style="margin-bottom: 7px" class="form-control"  type="text" name="txtEmail" required="" placeholder="Enter your email"  />
+            <input style="margin-bottom: 7px" class="form-control"  type="text" name="txtEmail"   />
         </fieldset>
         <fieldset>
             Password
-            <input style="margin-bottom: 7px" class="form-control"  type="password" name="txtPassword"  required="" placeholder="Enter your password" />
-        </fieldset>
-        <fieldset>
-            Address
-            <input style="margin-bottom: 7px; word-wrap=break-word;" class="form-control" type="text" name="txtAddress" required="" placeholder="Enter your address"  />
-            
+            <input style="margin-bottom: 7px" class="form-control"  type="password" name="txtPassword"   />
         </fieldset>
         <fieldset>
             Phone Number
-            <input style="margin-bottom: 7px" class="form-control"  type="text" name="txtPhonenumber" required="" placeholder="Enter your phone number"  />
+            <input style="margin-bottom: 7px" class="form-control"  type="text" name="txtPhonenumber"   />
+        </fieldset>
+        <fieldset>
+            Address
+            <input style="margin-bottom: 7px" class="form-control" type="text" name="txtAddress"  />        
         </fieldset>
         <fieldset>
             Role
@@ -57,7 +53,7 @@
         </fieldset>
 
         <fieldset style="padding-top: 20px; text-align: center">
-            <input class="btn btn-danger" style="margin-right:10px; width: 70px"  type="submit" value="Add" />
+            <input class="btn btn-danger" style="margin-right:10px; width: 70px"  type="submit" value="Add" name="submit" />
             <input class="btn btn-danger" style="width: 70px" type="button" value="Cancel" onClick="location = 'index.php?act=1';" />
         </fieldset>
 

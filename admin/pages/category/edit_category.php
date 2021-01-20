@@ -32,7 +32,7 @@
     <fieldset>
         <legend>Category info</legend>
         Category Name
-        <input style="margin-bottom:7px;" class="form-control" type="text" name="txtCategory_Name" value="<?php echo $dong["Category_Name"]; ?>" />
+        <input style="margin-bottom:7px;" class="form-control" type="text" required="" name="txtCategory_Name" value="<?php echo $dong["Category_Name"]; ?>" />
         <input type="hidden" name="id" value="<?php echo $id;?>" />
     </fieldset>
    
