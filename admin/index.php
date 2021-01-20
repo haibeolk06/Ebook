@@ -7,7 +7,6 @@
 		DataProvider::ChangeURL('login.php');
 	if($_SESSION["MaLoaiTaiKhoan"] != 0)
 		DataProvider::ChangeURL('login.php?error=3');
-		
 	//Đã đăng nhập thành công với quyền Admin rồi
 
 ?>  -->

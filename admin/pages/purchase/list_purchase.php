@@ -68,13 +68,13 @@
                         
                         <table>
                             <tr style="text-align: center; font-size: 14px; ">
-                                <th width="50">User Id</th>
-                                <th width="100">Name</th>
-                                <th width="250">DeliveryAddress</th>
-                                <th width="150">PhoneNumber</th>
+                                <th width="40">Id</th>
+                                <th width="90">Name</th>
+                                <th width="240">DeliveryAddress</th>
+                                <th width="100">PhoneNumber</th>
                                 <th width="100">Email</th>
-                                <th width="200">Created</th>
-                                <th width="70">Total</th>
+                                <th width="100">Created</th>
+                                <th width="80">Total</th>
                                 <th width="70">State</th>
                                 
                             </tr>
@@ -97,7 +97,7 @@
                                 {
                                     ?>
                                         <tr style="text-align: center;"> 
-                                            <td><?php echo $row["User_Id"]; ?></td>
+                                            <td><?php echo $row["Purchase_Id"]; ?></td>
                                             <td><?php echo $row["Name"]; ?></td>
                                             <td><?php echo $row["DeliveryAddress"]; ?></td>
                                             <td><?php echo $row["PhoneNumber"]; ?></td>
@@ -106,13 +106,17 @@
                                             <td><?php echo $row["Total"]; ?></td>
                                             <td><?php echo $row["State"]; ?></td>
                                             <td>
-                                                <a href="index.php?act=4&sub=3&id=<?php echo $row["State"]; ?>">
+                                                <a href="index.php?act=5&sub=3&id=<?php echo $row["Purchase_Id"]; ?>">
                                                     <i class="far fa-edit"></i>
                                                     <span>Edit</span>
                                                 </a>
-                                                <a href="index.php?act=3&sub=2&id=<?php echo $row["State"]; ?>">
-                                                    <i style="margin-left: 15px" class="la la-times-circle-o"></i>
+                                                <a href="index.php?act=5&sub=2&id=<?php echo $row["Purchase_Id"]; ?>">
+                                                    <i style="margin-left: 10px" class="la la-times-circle-o"></i>
                                                     <span >Delete</span>
+                                                </a>
+                                                <a href="index.php?act=4&sub=3&id=<?php echo $row["Purchase_Id"]; ?>">
+                                                    <i style="margin-left: 10px" class="far fa-eye"></i>
+                                                    <span>View</span>
                                                 </a>
                                             </td>
                                         </tr>
