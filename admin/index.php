@@ -3,15 +3,6 @@
 	include("../DBConnect.php");
 	
 	//Kiểm tra có đăng nhập với quyền Admin chưa?
-<<<<<<< HEAD
-	if(isset($_SESSION["User_Id"]) != true)
-		DataProvider::ChangeURL('login.php');
-	if($_SESSION["MaLoaiTaiKhoan"] != 0)
-		DataProvider::ChangeURL('login.php?error=3');
-	//Đã đăng nhập thành công với quyền Admin rồi
-
-?>  -->
-=======
     if(isset($_SESSION['display_name']) && isset($_SESSION['email']) && isset($_SESSION["role"])){
         if($_SESSION["role"] != 1){
             header('Location: /EBook');
@@ -22,7 +13,6 @@
     }	
     
 ?>
->>>>>>> 621dc857aab6914d8eb08223dfac4a0e279c903b
 
 <!DOCTYPE html>
 <html lang="en">

@@ -34,7 +34,7 @@
                                 <th width="200">Last name</th>
                                 <th width="200">Address</th>
                                 <th width="100">Phone number</th>
-                                <th width="100">Verification Code</th>
+                                <!-- <th width="100">Verification Code</th> -->
                                 <th width="50">Verified</th>
                                 <th width="200">Action</th>
                             </tr>
@@ -55,7 +55,7 @@
                                             <td><?php echo $row["Last_Name"]; ?></td>
                                             <td><?php echo $row["Address"]; ?></td>
                                             <td><?php echo $row["Phonenumber"]; ?></td>
-                                            <td><?php echo $row["Verification_Code"]; ?></td>
+                                            
                                             <td><?php echo $row["Verified"]; ?></td>                                           
                                             <td>
                                                 <a href="index.php?act=1&sub=3&id=<?php echo $row["User_Id"]; ?>">
