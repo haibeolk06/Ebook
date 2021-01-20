@@ -33,32 +33,19 @@
                                     </a>
                                     <p class="text-muted mb-4 mt-3">Enter your email address and password to access admin panel.</p>
                                 </div>
-                                
-                                <h4 class="auth-title">Sign In</h4>
-                                <?php
-                                    if(isset($_GET["error"]))
-                                    {	
-                                        if($_GET["error"] == "ChuaXacMinh")					
-                                            echo '<p class="errorMessage"> Vui lòng kiểm tra Email của bạn để xác minh tài khoản </p>';
-                                        elseif($_GET["error"] == "ChuaTonTai")
-                                            echo '<p class="errorMessage"> Tài khoản không tồn tại </p>';
-                                        elseif($_GET["error"] == "txbRong")
-                                            echo '<p class="errorMessage"> Vui lòng nhập đầy đủ thông tin </p>';
-                                        elseif($_GET["error"] == "notadmin")
-                                            echo '<p class="errorMessage"> Không Phải Tài Khoản Admin </p>';
-                                    }						
-                                ?>
 
-                                <form action="xllogin.php" method="POST">
+                                <h4 class="auth-title">Sign In</h4>
+
+                                <form action="#">
 
                                     <div class="form-group mb-3">
                                         <label for="emailaddress">Email address</label>
-                                        <input class="form-control" type="email" name="emailaddress" required="" placeholder="Enter your email">
+                                        <input class="form-control" type="email" id="emailaddress" required="" placeholder="Enter your email">
                                     </div>
 
                                     <div class="form-group mb-3">
                                         <label for="password">Password</label>
-                                        <input class="form-control" type="password" required="" name="password" placeholder="Enter your password">
+                                        <input class="form-control" type="password" required="" id="password" placeholder="Enter your password">
                                     </div>
 
                                     <div class="form-group mb-3">
@@ -69,7 +56,7 @@
                                     </div>
 
                                     <div class="form-group mb-0 text-center">
-                                        <button class="btn btn-danger btn-block" name="login" type="submit"> Log In 
+                                        <button class="btn btn-danger btn-block" type="submit"> Log In 
                                             
                                         </button>
                                     </div>

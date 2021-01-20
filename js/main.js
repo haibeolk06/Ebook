@@ -114,14 +114,62 @@
 			value = value < 1 ? 1 : value;
 			$input.val(value);
 			$input.change();
-
-		})
+		});
 
 		up.on('click', function () {
 			var value = parseInt($input.val()) + 1;
 			$input.val(value);
 			$input.change();
-		})
+		});
+	});
+
+	$("#gioHang").on('change', '.chiTietSP', function() {
+		
+		// var up = $(this).find('.input-number .qty-up');
+		// var down = $(this).find('.input-number .qty-down');
+		// var inputNumber = $(this).find('.input-number input[type="number"]');
+
+		// up.one('click', function () {
+		// 	var value = parseInt(inputNumber.val()) + 1;	
+		// 	console.log('Sau khi tăng 1: ' + value);		
+		// 	inputNumber.val(value);
+		// 	inputNumber.change();		
+		// });
+
+		// down.one('mouseup', function () {
+		// 	var value = parseInt(inputNumber.val()) - 1;
+		// 	value = value < 1 ? 1 : value;
+		// 	console.log('Sau khi giảm 1: ' + value);	
+		// 	inputNumber.val(value);
+		// 	inputNumber.change();	
+		// });
+
+		var soLuong = parseInt($(this).find(".input-number input[type='number']").val());				
+		var maSP = $(this).find(".product_id").text();
+		var tongTien1SP = $(this).find(".tongTien1SP");
+
+		$.ajax({
+				url: "pages-handle/xlTangSoLuongSP.php",
+				method: "POST",
+				data: {
+					maSP: maSP,
+					soLuong: soLuong,
+				},
+				dataType: "json",
+				success: function(data){
+					data.tongTien1SP = new Intl.NumberFormat('de-DE').format(data.tongTien1SP);
+					data.tongTien = new Intl.NumberFormat('de-DE').format(data.tongTien);
+					tongTien1SP.html(data.tongTien1SP + '₫');				
+					$("#tamTinh-GioHang").html(data.tongTien + '₫');
+					$("#tongTien-GioHang").html(data.tongTien + '₫');
+
+					$("#dsSanPham-DropDown").html(data.productsDropDown);
+					$("#tamTinh-GioHang-DropDown").html(data.tongTien + '₫');
+				},
+				error: function (xhr, ajaxOptions, thrownError) {
+						console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+				},	
+		});							
 	});
 	
 })(jQuery);

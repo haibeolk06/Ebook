@@ -21,7 +21,7 @@
     
         <fieldset>
             Publishing Company Name
-            <input style="margin-bottom: 7px" class="form-control" type="text" name="txtCompany_Name"  />
+            <input style="margin-bottom: 7px" class="form-control" type="text" required="" name="txtCompany_Name"  />
             
         </fieldset>
         

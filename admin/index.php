@@ -1,16 +1,18 @@
-﻿<!-- <?php
+﻿<?php
 	session_start();
 	include("../DBConnect.php");
 	
 	//Kiểm tra có đăng nhập với quyền Admin chưa?
-	if(isset($_SESSION["User_Id"]) != true)
-		DataProvider::ChangeURL('login.php');
-	if($_SESSION["MaLoaiTaiKhoan"] != 0)
-		DataProvider::ChangeURL('login.php?error=3');
-		
-	//Đã đăng nhập thành công với quyền Admin rồi
-
-?>  -->
+    if(isset($_SESSION['display_name']) && isset($_SESSION['email']) && isset($_SESSION["role"])){
+        if($_SESSION["role"] != 1){
+            header('Location: /EBook');
+        }
+    }
+    else{
+        header('Location: /EBook');
+    }	
+    
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +34,6 @@
         <link href="assets\css\icons.min.css" rel="stylesheet" type="text/css">
         <link href="assets\css\app.min.css" rel="stylesheet" type="text/css">
         <link href="assets\css\css.css" rel="stylesheet" type="text/css">
-       
 
     </head>
 
@@ -74,6 +75,9 @@
                     case 5: //QL LoaiSanPham
 						include('pages/purchase/pIndex.php');
                         break;
+                    case 5: //Thong Bao
+                        include('pages/pThongBao.php');
+                        break;
 				}
 			?>
         </div>
@@ -98,5 +102,10 @@
         <!-- App js -->
         <script src="assets\js\app.min.js"></script>
         
+        <script>
+            
+        </script>
+
     </body>
+
 </html>

@@ -47,7 +47,7 @@
                                                     <i class="far fa-edit"></i>
                                                     <span>Edit</span>
                                                 </a>
-                                                <a href="index.php?act=2&sub=2&id=<?php echo $row["Publishing_Company_Id"]; ?>">
+                                                <a onclick="return window.confirm('Delete this item?');" href="index.php?act=2&sub=2&id=<?php echo $row["Publishing_Company_Id"]; ?>">
                                                     <i style="margin-left: 15px" class="la la-times-circle-o"></i>
                                                     <span >Delete</span>
                                                 </a>

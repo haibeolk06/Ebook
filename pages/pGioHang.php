@@ -1,11 +1,14 @@
 <!-- SECTION -->
 <div class="section">
 	<!-- container -->
-	<div class="container">
-		<form>
-
-		<!-- row -->
+	<div class="container">		
+		
 		<div class="row">
+			<?php 
+				if(!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0 )
+					echo '<h2 class="notification-error"> BẠN CHƯA CÓ SẢN PHẨM NÀO TRONG GIỎ HÀNG </h2>';
+				else{						
+			?>
 			<div class="col-md-9">
 
 				<div class="section-title">
@@ -29,18 +32,19 @@
 						<?php
 							if(isset($_SESSION['cart'])){
 								foreach ($_SESSION['cart'] as $key => $value){											
-									include './templates/mauSanPham-Dropdown.php';				
+									include './templates/mauSanPham-pGioHang.php';				
 								}
 							} 
 						?>
 						
 						</tbody>
+						
 					</table>
 				</div>
 
 			</div>
 
-			<!-- Order Details -->
+			<!-- Chi tiết đơn hàng -->
 			<div class="col-md-3 order-details" style="margin-top: 80px">
 
 				<div class="order-summary">
@@ -86,11 +90,9 @@
 				</a>
 			</div>
 
+			<?php } ?>
 		</div>
-		<!-- /row -->
-
-		<form>
-		
+	
 	</div>
 	<!-- /container -->
 </div>

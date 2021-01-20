@@ -10,6 +10,7 @@ include '..\DBConnect.php';
         $ds_LoaiSach = $_POST['ds_LoaiSach'];
 
         foreach ($ds_LoaiSach as $value) {
+            #Kiểm tra nếu chưa tồn tại loại sách đó trong SESSION thì thêm vào
             if(!isset($_SESSION['ds_LoaiSach'][$value]))
                     $_SESSION['ds_LoaiSach'][$value] = array('category_id' => $value);
         }        
@@ -20,6 +21,7 @@ include '..\DBConnect.php';
         $ds_NXB = $_POST['ds_NXB'];
 
         foreach ($ds_NXB as $value) {
+            #Kiểm tra nếu chưa tồn tại NXB đó trong SESSION thì thêm vào
             if(!isset($_SESSION['ds_NXB'][$value]))
                     $_SESSION['ds_NXB'][$value] = array('publishing_company_id' => $value);
         }      
@@ -50,6 +52,6 @@ include '..\DBConnect.php';
     }
     
 
-    include '.\pages-handle\xlHienThiSanPham.php';  
+    include './pages-handle/xlHienThiSanPham.php';  
 //}
 ?>

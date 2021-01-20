@@ -13,7 +13,6 @@
 		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 		<title>EBook - Mua sách trực tuyến</title>
-		<link rel="shortcut icon" href="admin\assets\images\ebook-logo.ico">
 		<script src='https://www.google.com/recaptcha/api.js'></script>
 		<!-- Google font -->
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
@@ -115,7 +114,8 @@
 				}		
 			}			
 		</script>
-
+		
+		<!-- Xử lý chức năng tìm kiếm (dùng để lấy keyword) -->
 		<script>
     		$("#submitFrmSearch").click(function(e){
 				e.preventDefault();
@@ -126,6 +126,7 @@
 			});
 		</script>
 
+		<!-- Xử lý filter CheckBox -->
 		<script>
 			var ds_LoaiSach = [];
 			var dsUncheck_LoaiSach = [];
@@ -178,38 +179,60 @@
 			});
 		</script>
 
+		<!-- Xử lý tăng số lượng SP trong Giỏ Hàng -->
 		<script>
+		
+			// $("#gioHang").on('change, click', '.chiTietSP', function() {
 			
-			$(".dsSanPham-GioHang").on('change, click', function() {
+			// 	var up = $(this).find('.input-number .qty-up');
+			// 	var down = $(this).find('.input-number .qty-down');
+			// 	var inputNumber = $(this).find('.input-number input[type="number"]');
+			// 	console.log(inputNumber.val());
+			// 	up.one('click', function () {
+			// 		var value = parseInt(inputNumber.val()) + 1;
+			// 		inputNumber.val(value);
+			// 		inputNumber.change();
+			// 		console.log(value);		
+			// 	});
 
-				var soLuong = parseInt($(this).find(".input-number input[type='number']").val());				
-				var donGia =  $(this).find(".price").text();
-				donGia = parseInt(donGia.replace('.', ''));
-				
-				var tenSP = $(this).find(".tenSanPham-GioHang").text();
-				var tongTien = $(this).find(".tongTien1SP-GioHang");
-				$.ajax({
-						url: "pages-handle/xlTangSoLuongSP.php",
-						method: "POST",
-						data: {
-							tenSP: tenSP,
-							soLuong: soLuong,
-						},
-						dataType: "text",
-						success: function(data){
-							data = new Intl.NumberFormat('de-DE').format(data);
-							tongTien.html(data);
-						},
-						error: function (xhr, ajaxOptions, thrownError) {
-								console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-						},	
-				});	
+			// 	down.one('click', function () {
+			// 		var value = parseInt(inputNumber.val()) + 1;
+			// 		value = value < 1 ? 1 : value;
+			// 		inputNumber.val(value);
+			// 		inputNumber.change();
+			// 		console.log(value);		
+			// 	});
 
-				
-				
-			});
+
+			// 	var soLuong = parseInt($(this).find(".input-number input[type='number']").val());				
+			// 	var maSP = $(this).find(".product_id").text();
+			// 	var tongTien = $(this).find(".tongTien1SP");
+
+			// 	$.ajax({
+			// 			url: "pages-handle/xlTangSoLuongSP.php",
+			// 			method: "POST",
+			// 			data: {
+			// 				maSP: maSP,
+			// 				soLuong: soLuong,
+			// 			},
+			// 			dataType: "json",
+			// 			success: function(data){
+			// 				data.tongTien1SP = new Intl.NumberFormat('de-DE').format(data.tongTien1SP);
+			// 				data.tongTien = new Intl.NumberFormat('de-DE').format(data.tongTien);
+			// 				tongTien.html(data.tongTien1SP + '₫');				
+			// 				$("#tamTinh-GioHang").html(data.tongTien + '₫');
+			// 				$("#tongTien-GioHang").html(data.tongTien + '₫');
+			// 				$("#dsSanPham-DropDown").html(data.productsDropDown);
+			// 			},
+			// 			error: function (xhr, ajaxOptions, thrownError) {
+			// 					console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+			// 			},	
+			// 	});							
+			// });
+
 		</script>
 
+		<!-- Xử lý chức năng Đăng Ký -->
 		<script>
 
 			$("#submitFrmDK").on("click", function(e) {
@@ -284,6 +307,5 @@
 			});
 		</script>
 		
-	
 	</body>
 </html>

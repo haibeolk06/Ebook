@@ -101,13 +101,13 @@
                                             <td><?php echo $row["Date"]; ?></td>
                                             <td><img src="..\<?= $row['Avatar'] ?>" style="width:70px; height: 70px; margin-top: 15px" /></td>
                                             <td>
-                                                <a href="index.php?act=4&sub=3&id=<?php echo $row["SKU"]; ?>">
+                                                <a href="index.php?act=4&sub=3&id=<?php echo $row["Product_Id"]; ?>">
                                                     <i class="far fa-edit"></i>
                                                     <span>Edit</span>
                                                 </a>
-                                                <a href="index.php?act=3&sub=2&id=<?php echo $row["SKU"]; ?>">
+                                                <a onclick="return window.confirm('Delete this item?');" href="index.php?act=4&sub=2&id=<?php echo $row["Product_Id"]; ?>">
                                                     <i style="margin-left: 15px" class="la la-times-circle-o"></i>
-                                                    <span >Delete</span>
+                                                    <span>Delete</span>
                                                 </a>
                                             </td>
                                         </tr>

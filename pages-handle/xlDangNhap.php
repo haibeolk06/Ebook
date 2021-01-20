@@ -25,7 +25,11 @@
                 if($result[0]['Password'] == $password){
                     $_SESSION["display_name"] = $result[0]['Last_Name'];
                     $_SESSION["email"] = $result[0]['Email'];
+                    $_SESSION["role"] = $result[0]['User_Role'];
                     header('Location: ../index.php');                
+                }
+                else{
+                    header('Location: ../index.php?page=DangNhap&error=SaiMatKhau');        
                 }
             }                     
         }
