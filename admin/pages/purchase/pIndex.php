@@ -17,6 +17,8 @@
 			break;
 		case 4: //Thêm mới
 			include('pages/purchase/add_purchase.php');
+		case 5:
+			include('pages/purchase/view_purchasedetail.php');
 			break;
 	}
 ?>

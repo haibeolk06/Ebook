@@ -114,7 +114,7 @@
                                                     <i style="margin-left: 10px" class="la la-times-circle-o"></i>
                                                     <span >Delete</span>
                                                 </a>
-                                                <a href="index.php?act=4&sub=3&id=<?php echo $row["Purchase_Id"]; ?>">
+                                                <a href="index.php?act=5&sub=5&id=<?php echo $row["Purchase_Id"]; ?>">
                                                     <i style="margin-left: 10px" class="far fa-eye"></i>
                                                     <span>View</span>
                                                 </a>
