@@ -1,11 +1,7 @@
 <html>
     <head>
         <style>
-            table{
-                text-align: center;
-                font-size: 14px; 
-                
-            }
+
             .paging{
                 font-size: 14px;
                 text-align: right; 
@@ -71,7 +67,6 @@
                         <!-- end page title --> 
                         
                         <table>
-<<<<<<< HEAD
                             <tr style="text-align: center; font-size: 14px; ">
                                 <th width="40">Id</th>
                                 <th width="90">Name</th>
@@ -80,16 +75,6 @@
                                 <th width="100">Email</th>
                                 <th width="100">Created</th>
                                 <th width="80">Total</th>
-=======
-                            <tr>
-                                <th width="60">User Id</th>
-                                <th width="100">Name</th>
-                                <th width="200">DeliveryAddress</th>
-                                <th width="100">PhoneNumber</th>
-                                <th width="110">Email</th>
-                                <th width="100">Created</th>
-                                <th width="70">Total</th>
->>>>>>> 621dc857aab6914d8eb08223dfac4a0e279c903b
                                 <th width="70">State</th>
                                 
                             </tr>
